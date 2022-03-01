@@ -1,0 +1,18 @@
+.buttonOption {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.buttonOption:hover {
+  background-color: lightgrey;
+}
+
+.buttonOption > span {
+  font-size: 14px;
+  color: gray;
+  font-weight: 500;
+  margin-left: 10px;
+}

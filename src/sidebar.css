@@ -1,0 +1,113 @@
+.sidebar {
+  flex: 0.2;
+}
+
+.sidebar__top {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  position: relative;
+}
+
+.sidebar__profil > img {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 70px;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.sidebar__profil {
+  margin-top: 30px;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
+}
+
+.sidebar__profil > h2 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.sidebar__profil > h4 {
+  font-size: 12px;
+  font-weight: normal;
+  margin: 6px 0;
+  color: gray;
+}
+
+.sidebar__avatar {
+  margin: 0 auto;
+  height: 55px !important;
+  width: 55px !important;
+  border: 1px solid white;
+}
+
+.sidebar__connection {
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
+}
+
+.sidebar__connection > h3 {
+  font-size: 12px;
+  color: gray;
+  font-weight: 500;
+}
+
+.sidebar__connection > p {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.sidebar__subscription {
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
+}
+
+.sidebar__subscription > span {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.sidebar__subscription > h5 {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.sidebar__myitems {
+  padding: 10px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.sidebar__bottom {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  margin-top: 10px;
+}
+
+.sidebar_bottomItems {
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
+}
+
+.sidebar_bottomItem {
+  font-size: 12px;
+  color: #0a66c2;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.sidebar_discover {
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: gray;
+  font-weight: 500;
+}
