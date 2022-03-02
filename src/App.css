@@ -2,11 +2,13 @@
   background-color: #f3f2ef;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  padding-bottom: 30px;
 }
 
 .app__body {
   display: flex;
-  min-height: 100vh;
+  min-height: 100%;
   margin-top: 20px;
   justify-content: space-evenly;
 }

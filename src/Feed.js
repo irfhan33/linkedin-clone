@@ -10,8 +10,12 @@ import { useEffect, useState } from "react";
 import { db } from "./firebaseConfig";
 import firebase from "firebase/app";
 import "firebase/firestore";
+import { useSelector } from "react-redux";
+import { selectUser } from "./features/userSlice";
+import FlipMove from "react-flip-move";
 
 export default function Feed() {
+  const user = useSelector(selectUser);
   const [posts, setPosts] = useState([]);
   const [input, setInput] = useState("");
   useEffect(() => {
@@ -29,9 +33,9 @@ export default function Feed() {
   const sendPost = (e) => {
     e.preventDefault();
     db.collection("posts").add({
-      avatar: "",
-      name: "Biren Patel",
-      description: "Hindustan Unilever Ltd | Customer Retention Officer",
+      avatar: user.photoURL || "",
+      name: user.displayName,
+      description: user.email,
       time: "16h",
       msg: input,
       msgImg: "",
@@ -43,7 +47,7 @@ export default function Feed() {
     <div className="feed">
       <div className="feed__inputContainer">
         <div className="feed__inputForm">
-          <Avatar src="" />
+          <Avatar src={user.photoURL}>{user.email[0].toUpperCase()}</Avatar>
           <div className="feed__input">
             <form action="">
               <input
@@ -70,19 +74,21 @@ export default function Feed() {
           />
         </div>
       </div>
-      {posts.map(
-        ({ id, data: { avatar, name, description, time, msg, msgImg } }) => (
-          <Post
-            key={id}
-            avatar={avatar}
-            name={name}
-            description={description}
-            time={time}
-            msg={msg}
-            msgImg={msgImg}
-          />
-        )
-      )}
+      <FlipMove>
+        {posts.map(
+          ({ id, data: { avatar, name, description, time, msg, msgImg } }) => (
+            <Post
+              key={id}
+              avatar={avatar}
+              name={name}
+              description={description}
+              time={time}
+              msg={msg}
+              msgImg={msgImg}
+            />
+          )
+        )}
+      </FlipMove>
     </div>
   );
 }
